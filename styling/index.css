@@ -1,6 +1,6 @@
 @import url("fonts.css");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css");
 @import url("https://cdn.materialdesignicons.com/5.0.45/css/materialdesignicons.min.css");
-@import url("desktop.css") only screen and (min-width : 700px);
-@import url("tablet.css") only screen and (max-width : 699px);
-@import url("desktop.css") only screen and (max-width : 400px);
+@import url("desktop.css");
+@import url("tablet.css");
+@import url("mobile.css");

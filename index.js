@@ -4,7 +4,7 @@ import "./styling/index.css"
 
  function App() {
    return(
-     <div className='mdi mdi-book'>
+     <div className='mdi mdi-book'> A cool book is fun to read
      </div>
    )
  }

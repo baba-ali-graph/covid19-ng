@@ -6,7 +6,8 @@ import DayBanner from './components/DayBanner'
 import NewsUpdate from './components/NewsUpdate'
 import SocialButtons from './components/SocialButtons'
 import WelcomeText from './components/WelcomeText'
-
+import store from './store/index'
+import {Provider} from 'react-redux'
 
 
 import "./styling/index.css"
@@ -15,15 +16,16 @@ import "./styling/base.css"
  function App() {
    return(
      <div className='app-body'>
-     <AppHeader />
-     <DayBanner />
-     <WelcomeText />
-     <Covid19Table />
-     <NewsUpdate />
-     <SocialButtons />
-
+     <Provider store={store}>
+      <AppHeader />
+      <DayBanner />
+      <WelcomeText />
+      <Covid19Table />
+      <NewsUpdate />
+      <SocialButtons />
+    </Provider>
      </div>
    )
  }
 
- render(<App/>, document.querySelector('#root'))
+ render(<App/> , document.querySelector('#root'))

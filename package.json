@@ -5,7 +5,10 @@
   "dependencies": {
     "react": "^16.12.0",
     "react-animated-css": "^1.2.1",
-    "react-dom": "^16.12.0"
+    "react-dom": "^16.12.0",
+    "react-redux": "^7.2.0",
+    "redux": "^2.0.0 || ^3.0.0 || ^4.0.0-0",
+    "tools": "file:./tools/index.js"
   },
   "scripts": {
     "start": "react-scripts start",

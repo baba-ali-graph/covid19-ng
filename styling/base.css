@@ -1,3 +1,99 @@
-.app-body  {
+/* colors */
+:root {
+  --color-1: #c7f9ea;
+  --color-2: #77ffd6;
+  --color-3: #4de2b6;
+  --color-4: #3e997d;
+  --color-5: #3a6055;
+}
+
+body  {
+  padding:0px;
+  margin:0px;
   background:var(--color-1);
+}
+
+@media only screen and (max-width:400px) {
+
+
+.app-header {
+    padding:6px;
+    margin-bottom:30px;
+    background:var(--color-4);
+    text-align:center;
+    color:var(--color-1);
+}
+
+h2 {
+    font-size:1.5em;
+}
+h3 {
+    font-size:1.3em;
+}
+.day-banner {
+    width:170px;
+    padding:15px;
+    text-align:center;
+    margin:auto;
+    display:flex;
+    flex-flow:column wap;
+    justify-content:center;
+    align-items:center;
+    border:1px solid var(--color-3);
+}
+p {
+    padding:10px;
+    font-size:.9em;
+}
+/* 
+table.stats {
+    
+}
+table hd {}
+table tr {}
+table td {}
+table tr.country-two {}
+table tr.percentage {} */
+
+.compare-container {
+    display:flex;
+    flex-flow:column wrap;
+    justify-content:center;
+    align-items:center;
+}
+.compare-container label {
+    margin-bottom:4px;
+}
+.compare-container .input-country {
+    border:.6px solid var(--color-3);
+    background:transparent;
+    padding:12px;
+}
+.compare-container .indicator {
+    color:var(--color-4);
+    font-size:1em;
+}
+h3.news-update {
+    width:200px;
+    background:var(--color-4);
+    color:white;
+    margin:auto;
+    text-align:center;
+}
+
+.news-item {
+    display:flex;
+    flex-flow:row nowrap;
+    justify-content:space-between;
+    align-items:center;
+    background:var(--color-4);
+    color:var(--color-1);
+}
+.new-item p {
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    max-width:160px;
+    color:var(--color-4);
+}
+
 }

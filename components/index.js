@@ -1,3 +1,4 @@
+import React from 'react'
 import AppHeader from './AppHeader'
 import Covid19Table from './Covid19Table'
 import DayBanner from './DayBanner'

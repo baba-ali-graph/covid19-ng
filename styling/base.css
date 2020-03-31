@@ -45,6 +45,13 @@ p {
     padding:10px;
     font-size:.9em;
 }
+p.welcome-text {
+  width:50vh;
+  display:flex;
+  justify-content:center;
+  margin:auto;
+  font-size:1.2em
+}
 /* 
 table.stats {
     

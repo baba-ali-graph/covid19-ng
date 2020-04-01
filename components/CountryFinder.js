@@ -1,28 +1,32 @@
 import React, {useState} from 'react'
 import {connect} from 'react-redux'
 import {retrieve} from '../actions/actions'
-export default function CountryFinder(){
+export default function CountryFinder(props){
   const [status, setStatus] = useState('inactive')
-
+function handleShortcut(e){
+  if(e.key="enter")
+    props.retrieve()
+}
   return(
     <div className='country-finder-container'>
       <label> Compare : </label>
       <input 
         className={'country-finder-input' + status}
-        onFocus={e=> setStatus('active')}
-        onBlur={e=> setStatus('inactive')}
+        focusIn={e=> setStatus('active')}
+        focusOut={e=> setStatus('inactive')}
         type='search'
-        onKeyDown={e => handleShortcut(e.target.value)}
+        onKeyDown={e => handleShortcut(e)}
         placeholder="Which country ? " />
       <button 
         className='country-finder-button'
-        onClick={e=> props.retrieve}
+        onClick={e=>props.retrieve}
         >
         Compare
       </button>
     </div>
   )
 }
-
-const mapDispatchTor
-export default connect(null,dispatch =>({retrieve:dispatch(retrieve)}))(CountryFinder)
+const mapDispatchToProps = dispatch => ({
+  retrieve : dispatch({type:"REQUEST_START"})
+})
+export default connect(null,mapDispatchToProps)(CountryFinder)

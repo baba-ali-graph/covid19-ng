@@ -88,10 +88,11 @@ p.welcome-text {
 table {
     box-sizing : border-box;
     width:100%; /* ? */
-    font-size:1.3em; /* ? */
+    font-size:1.1em; /* ? */
     text-align:center;
 
 }
+
 .table-header{
     background:var(--color-2);
     padding:10px auto;

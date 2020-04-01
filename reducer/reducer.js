@@ -7,16 +7,13 @@ export default function reducer(state = initialState, action){
     switch(action.type){
         case types.APP_LOAD_SUCCESS:
             return {...state, baseCountry : action.data}
-            break;
         case types.APP_LOADED_FAILURE:
             return {...state, error : action.data}
-            break
         case types.COMPARE_START:
-            return {...state, message : {type:"info", text:"loading"} }
-            break
+            console.log("where are")
+            return {...state, hidden:false, message : {type:"info", text:"loading"} }
         case types.COMPARE_SUCCESS:
             return {...state, compareCountry : action.data }
-            break
         case types.COMPARE_FAILED:
             return {...state, error : action.data }
         default:

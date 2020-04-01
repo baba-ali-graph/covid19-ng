@@ -3,8 +3,8 @@ import {msgUI, autoHiding} from '../tools'
 import AutoHide from './AutoHide'
 import {Animated} from 'react-animated-css'
 
-export default function MessageBar({msgType,content}){
-    const [hidden, setHidden] = useState(false)
+export default function MessageBar({hiddenProp,msgType,content}){
+    const [hidden, setHidden] = useState(hiddenProp)
     const componentClass =` message-bar mdi mdi-${msgUI(msgType)}`
     if(!hidden && msgType != "progress")
         setHidden(true)
@@ -20,7 +20,8 @@ export default function MessageBar({msgType,content}){
 }
 MessageBar.defaultProps = {
   msgType : "error",
-  content : "Error ! Couldn't load data "
+  content : "Error ! Couldn't load data ",
+  hiddenProp : false
 }
 
 

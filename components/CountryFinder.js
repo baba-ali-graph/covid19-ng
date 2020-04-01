@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
-
+import {connect} from 'react-redux'
+import {retrieve} from '../actions/actions'
 export default function CountryFinder(){
   const [status, setStatus] = useState('inactive')
 
@@ -15,10 +16,13 @@ export default function CountryFinder(){
         placeholder="Which country ? " />
       <button 
         className='country-finder-button'
-        onClick={e=> props.retr}
+        onClick={e=> props.retrieve}
         >
         Compare
       </button>
     </div>
   )
 }
+
+const mapDispatchTor
+export default connect(null,dispatch =>({retrieve:dispatch(retrieve)}))(CountryFinder)

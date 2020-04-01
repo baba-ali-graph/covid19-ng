@@ -27,3 +27,10 @@ export const msgUI = msgType => {
   }
   return "info msg-info";
 };
+
+export const resolveModifierClass = (count, result) => {
+  if(count == 1 ) { // representing the second index whihc the recovered field of the json data.
+    return result < 0 ? "higher" : "lower"
+  }
+  return result < 0 ? "lower" : "higher"
+}

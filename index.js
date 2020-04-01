@@ -7,6 +7,7 @@ import NewsUpdate from './components/NewsUpdate'
 import SocialButtons from './components/SocialButtons'
 import WelcomeText from './components/WelcomeText'
 import MessageBar from './components/MessageBar'
+import CountryFinder from './components/CountryFinder'
 import store from './store/index'
 import {Provider} from 'react-redux'
 
@@ -22,6 +23,7 @@ import "./styling/base.css"
       <DayBanner />
       <WelcomeText />
       <Covid19Table />
+      <CountryFinder/>
       <NewsUpdate />
       <SocialButtons />
       <MessageBar />

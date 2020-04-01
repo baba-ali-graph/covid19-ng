@@ -116,24 +116,28 @@ tbody tr.compare-row td.lower {
 tbody tr.compare-row td.higher {
     color:red;
 }
-.compare-container {
+.country-finder-container {
     display:flex;
     flex-flow:column wrap;
     justify-content:center;
     align-items:center;
 }
-.compare-container label {
+.country-finder-container label {
     margin-bottom:4px;
 }
-.compare-container .input-country {
+.country-finder-input {
     border:.6px solid var(--color-3);
     background:transparent;
     padding:12px;
 }
-.compare-container .indicator {
-    color:var(--color-4);
-    font-size:1em;
+.country-finder-button {
+  cursor:pointer;
+  padding:6px;
+  color:var(--color-1);
+  background:var(--color-4);
+  box-shadow:grey 1px 1px 2px 1px;
 }
+
 h3.news-update {
     width:200px;
     background:var(--color-4);

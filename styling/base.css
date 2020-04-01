@@ -15,16 +15,27 @@ body  {
 }
 
 .message-bar {
-  display:flx;
+  display:flex;
+  justify-content: flex-start;
+  align-items:center;
   position:fixed;
   bottom:0px;
+  font-size: .em;
   width:100vh;
   padding:5px;
   color:white;
   background:rgba(37, 148, 139, .5);
 }
-.message-bar msg-error {
-  
+.message-bar span {
+  margin: auto 10px;
+}
+.msg-error {
+  color:red; 
+  background:#d6c2c3;
+}
+.msg-info {
+  color:white;
+  background:#3a6055;
 }
 
 .hidden {

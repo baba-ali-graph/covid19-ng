@@ -16,12 +16,14 @@ export const autoHiding = (hidden, duration = 500) => {
     }, duration);
   }
 };
-export const iconSelect = msgType => {
+export const msgUI = msgType => {
   switch (msgType) {
     case "error":
       return "alert msg-error";
     case "info":
       return "info msg-info";
+    case "progress":
+      return "loading mdi-spin msg-progress"
   }
   return "info msg-info";
 };

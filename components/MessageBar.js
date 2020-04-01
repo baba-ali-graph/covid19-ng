@@ -1,18 +1,26 @@
 import React, {useState} from 'react'
-import {iconSelect, autoHiding} from '../tools'
+import {msgUI, autoHiding} from '../tools'
+import AutoHide from './AutoHide'
 import {Animated} from 'react-animated-css'
 
 export default function MessageBar({msgType,content}){
- let hidden = false
- autoHiding(hidden, 500)
+    const [hidden, setHidden] = useState(false)
+    const componentClass =` message-bar mdi mdi-${msgUI(msgType)}`
+    if(!hidden && msgType != "progress")
+        setHidden(true)
   return(
-    <div className='message-bar'>
-    <Animated animationIn="slideUp" animationOut="slideDown" duration="500">
-      <span className={`mdi mdi-${iconSelect(msgType)}`}/>
-      <span className='message-content'> {content} okay </span>
-    </Animated>
+    <AutoHide hideAfter={5000} hidden={hidden}>
+    <Animated className= {componentClass} animationIn="fadeInUp" animationOut="fadeOutDown" duration="500"> 
+    <div className={}>   
+      <span className='message-content'> {content} </span>
     </div>
+    </Animated>
+    </AutoHide>
   )
+}
+MessageBar.defaultProps = {
+  msgType : "error",
+  content : "Error ! Couldn't load data "
 }
 
 

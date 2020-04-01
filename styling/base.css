@@ -11,9 +11,10 @@ body  {
   padding:0px;
   margin:0px;
   background:var(--color-1);
+  font-family:Oswald;
 }
 
-@media only screen and (max-width:50px) {
+@media only screen and (max-width:550px) {
 
 
 .app-header {
@@ -21,6 +22,7 @@ body  {
     margin-bottom:30px;
     background:var(--color-4);
     text-align:center;
+    font-family:Pattaya;
     color:var(--color-1);
 }
 

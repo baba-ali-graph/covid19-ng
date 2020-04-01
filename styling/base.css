@@ -88,7 +88,9 @@ p.welcome-text {
 table {
     box-sizing : border-box;
     width:100%; /* ? */
-    font-size:.9em; /* ? */
+    font-size:1.3em; /* ? */
+    text-align:center;
+
 }
 .table-header{
     background:var(--color-2);
@@ -100,18 +102,9 @@ tbody tr {
 }
 tbody tr.row-compare-country {
     background:var(--color-3);
+  
 }
-tbody tr.row-compare-country::before {
-    content : attr(data-ctr);
-    color:white;
-    position:absolute;
-    left:1px;
-    width:100%;
-    display:flex;
-    flex-flow:row nowrap;
-    align-items: center;
-    font-size:.5em;
-}
+
 
 tbody tr.compare-row {
     font-size:.8em; /* ? */

@@ -23,7 +23,7 @@ function renderRows(state) {
         <tbody>
         <tr> {renderCountry(state.baseCountry)} </tr>
         <tr className='row-compare-country'> {state.compareCountry ? renderCountry(state.compareCountry) : <td> {state.error} </td> } </tr>
-        {state.compareCountry && <CompareRow> renderComparism(state.baseCountry, state.compareCountry) </CompareRow> }
+        {state.compareCountry && <CompareRow> {renderComparism(state.baseCountry, state.compareCountry)} </CompareRow> }
         </tbody>
       )
 
@@ -32,7 +32,7 @@ function renderRows(state) {
 function renderCountry(country){
     let cells = []
     for (let key in country){
-        cells.push(<td> country[key] </td> )
+        cells.push(<td> {country[key]} </td> )
     }
     return cells
 }

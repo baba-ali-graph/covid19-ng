@@ -1,9 +1,9 @@
-import rootReducer from '../reducer/index'
+import reducer from '../reducer/reducer'
 import indexSaga from '../sagas'
 import {applyMiddleware, createStore} from 'redux'
 import createSagaMiddleware from 'redux-saga'
 
 const newSaga = createSagaMiddleware() 
-const store = createStore(rootReducer, applyMiddleware(newSaga))
+const store = createStore(reducer, applyMiddleware(newSaga))
 newSaga.run(indexSaga)
 export default store

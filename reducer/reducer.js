@@ -1,11 +1,7 @@
 import {currentDay} from '../tools/index'
 import * as types from '../actions/types'
-export const initialState = {
-    baseCountry : {},
-    compareCountry : {},
-    currentDay : currentDay,
-    error : false
-}
+import testapi from '../store/testapi'
+export const initialState = {...testapi}
 console.log(currentDay)
 export default function reducer(state = initialState, action){
     switch(action.type){

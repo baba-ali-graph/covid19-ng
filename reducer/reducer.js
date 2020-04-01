@@ -1,6 +1,6 @@
 import {currentDay} from '../tools/index'
 import * as types from '../actions/types'
-const initialState = {
+export const initialState = {
     baseCountry : {},
     compareCountry : {},
     currentDay : currentDay,

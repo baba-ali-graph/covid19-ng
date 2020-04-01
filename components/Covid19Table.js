@@ -1,6 +1,7 @@
 import React, {Fragment} from 'react'
 import TableHeading from './TableHeading'
 import CompareRow from './CompareRow'
+import {initialState} from '../reducer/reducer'
 import {connect} from 'react-redux'
 
 
@@ -20,8 +21,8 @@ function Covid19Table ({state}) {
 function renderRows(state) {
       return(
         <tbody>
-        <tr> {renderCountry(baseCountry)} </tr>
-        <tr className='row-compare-country'> {state.compareCountry ? renderCountry(compareCountry) : <td> {state.error} </td> } </tr>
+        <tr> {renderCountry(state.baseCountry)} </tr>
+        <tr className='row-compare-country'> {state.compareCountry ? renderCountry(state.compareCountry) : <td> {state.error} </td> } </tr>
         {state.compareCountry && <CompareRow> renderComparism(state.baseCountry, state.compareCountry) </CompareRow> }
         </tbody>
       )
@@ -48,8 +49,12 @@ export default function renderComparism(a,b){
     return cells
 }
 
+Covid19Table.defaultProps = {
+  state : initialState
+}
+
 const mapStateToProps = (state) => ({
 state : state
 })
 
-//  export default(mapStateToProps)(Covid19Table)
+ export default connect(mapStateToProps)(Covid19Table)

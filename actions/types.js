@@ -1,0 +1,7 @@
+export const APP_LOAD = "APP_LOAD"
+export const APP_LOAD_SUCCESS = "APP_LOAD_SUCCESS"
+export const APP_LOAD_FAILED = "APP_LOAD_FAILED"
+
+export const COMPARE_START = "COMPARE_START"
+export const COMPARE_SUCCESS = "COMPARE_SUCCESS"
+export const COMPARE_FAILED = "COMPARE FAILED"

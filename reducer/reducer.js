@@ -1,5 +1,5 @@
 import {currentDay} from '../tools/index'
-
+import * as types from '../actions/types'
 const initialState = {
     baseCountry : {},
     compareCountry : {},
@@ -9,19 +9,19 @@ const initialState = {
 console.log(currentDay)
 export default function reducer(state = initialState, action){
     switch(action.type){
-        case "APP_LOADED_SUCCESS":
+        case types.APP_LOAD_SUCCESS:
             return {...state, baseCountry : action.data}
             break;
-        case "APP_LOADED_FAILURE":
+        case types.APP_LOADED_FAILURE:
             return {...state, error : action.data}
             break
-        case "COMPARE_START":
+        case types.COMPARE_START:
             return {...state, status : "loading" }
             break
-        case "COMPARE_SUCCESS":
+        case types.COMPARE_SUCCESS:
             return {...state, compareCountry : action.data }
             break
-        case "COMPARE_FAILED":
+        case types.COMPARE_FAILED:
             return {...state, error : action.data }
         default:
             return state

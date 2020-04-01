@@ -6,6 +6,7 @@ import DayBanner from './components/DayBanner'
 import NewsUpdate from './components/NewsUpdate'
 import SocialButtons from './components/SocialButtons'
 import WelcomeText from './components/WelcomeText'
+import MessageBar from './components/MessageBar'
 import store from './store/index'
 import {Provider} from 'react-redux'
 
@@ -23,9 +24,17 @@ import "./styling/base.css"
       <Covid19Table />
       <NewsUpdate />
       <SocialButtons />
+      <MessageBar />
     </Provider>
      </div>
    )
  }
 
+
+const mapStateToProps = (state) => ({
+  baseCountry : state.baseCountry
+})
+const mapDispatchToProps = (dispatch) => ({
+  onload  = dispatch({type:APP_LOAD})
+})
  render(<App/> , document.querySelector('#root'))

@@ -14,6 +14,22 @@ body  {
   font-family:Oswald;
 }
 
+.message-bar {
+  display:flx;
+  position:fixed;
+  bottom:0px;
+  width:100vh;
+  padding:5px;
+  color:white;
+  background:rgba(37, 148, 139, .5);
+}
+.message-bar msg-error {
+  
+}
+
+.hidden {
+  display:none;
+}
 @media only screen and (max-width:550px) {
 
 
@@ -54,16 +70,47 @@ p.welcome-text {
   margin:auto;
   font-size:1.2em
 }
-/* 
-table.stats {
-    
+.table-container {
+    margin:10px; /* ? */   
 }
-table hd {}
-table tr {}
-table td {}
-table tr.country-two {}
-table tr.percentage {} */
 
+table {
+    box-sizing : border-box;
+    width:100vh; /* ? */
+    font-size:.9em; /* ? */
+}
+.table-header{
+    background:var(--color-2);
+    padding:10px auto;
+    color:var(--color-4);
+}
+tbody tr {
+    color:var(--color-4);
+}
+tbody tr.row-compare-country {
+    background:var(--color-3);
+}
+tbody tr.row-compare-country::before {
+    content : attr(data-ctr);
+    color:white;
+    position:absolute;
+    left:1px;
+    width:100%;
+    display:flex;
+    flex-flow:row nowrap;
+    align-items: center;
+    font-size:.5em;
+}
+
+tbody tr.compare-row {
+    font-size:.8em; /* ? */
+}
+tbody tr.compare-row td.lower {
+    color:green;
+}
+tbody tr.compare-row td.higher {
+    color:red;
+}
 .compare-container {
     display:flex;
     flex-flow:column wrap;
@@ -104,5 +151,6 @@ h3.news-update {
     max-width:160px;
     color:var(--color-4);
 }
+
 
 }

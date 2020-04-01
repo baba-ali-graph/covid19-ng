@@ -12,7 +12,7 @@ export default function reducer(state = initialState, action){
             return {...state, error : action.data}
             break
         case types.COMPARE_START:
-            return {...state, status : "loading" }
+            return {...state, message : {type:"info", text:"loading"} }
             break
         case types.COMPARE_SUCCESS:
             return {...state, compareCountry : action.data }

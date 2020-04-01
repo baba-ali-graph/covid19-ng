@@ -13,6 +13,6 @@ function* fetchCountry(action){
         
     }
     catch(e) {
-        yield put({type:COMPARE_FAILED, e})
+        yield put({type:COMPARE_FAILED, data:e})
     }
 }

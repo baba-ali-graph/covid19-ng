@@ -135,6 +135,8 @@ tbody tr.compare-row td.higher {
   padding:6px;
   color:var(--color-1);
   background:var(--color-4);
+  border:0px;
+  margin:5px auto;
   box-shadow:grey 1px 1px 2px 1px;
 }
 

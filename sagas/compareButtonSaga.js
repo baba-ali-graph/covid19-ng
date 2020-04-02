@@ -1,9 +1,9 @@
 import {put, takeEvery} from 'redux-saga/effects'
-import {REQUEST_START, COMPARE_SUCCESS, REQUEST_FAILED} from '../actions/types'
+import {COMPARE_START, COMPARE_SUCCESS, REQUEST_FAILED} from '../actions/types'
 import {compareEndpoint} from '../api/index'
 
-export function* watchCompareButton(){
-    yield takeEvery(REQUEST_START, fetchCountry)
+export default function* watchCompareButton(){
+    yield takeEvery(COMPARE_START, fetchCountry)
 }
 
 function* fetchCountry(action){

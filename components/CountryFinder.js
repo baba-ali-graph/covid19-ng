@@ -1,12 +1,12 @@
 import React, {useState} from 'react'
 import {connect} from 'react-redux'
-import {retrieve} from '../actions/actions'
+import {compareStart} from '../actions/actions'
 export default function CountryFinder(props){
   const [status, setStatus] = useState('inactive')
   const [country, setCountry] = useState('')
 function handleShortcut(e){
   if(e.key="enter")
-    props.retrieve(country)
+    props.compareStart(country)
 }
   return(
     <div className='country-finder-container'>
@@ -21,7 +21,7 @@ function handleShortcut(e){
         placeholder="Which country ? " />
       <button 
         className='country-finder-button'
-        onClick={e=> props.retrieve(country)}
+        onClick={e=> props.compareStart(country)}
         >
         Compare
       </button>
@@ -29,6 +29,6 @@ function handleShortcut(e){
   )
 }
 const mapDispatchToProps = dispatch => ({
-  retrieve : country => dispatch(retrieve())
+  compareStart : country => dispatch(compareStart(country))
 })
 export default connect(null,mapDispatchToProps)(CountryFinder)

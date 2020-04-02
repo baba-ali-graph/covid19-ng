@@ -6,7 +6,7 @@ import {connect} from 'react-redux'
 import {resolveModifierClass} from '../tools/index'
 import {requestStart, requestSuccess, requestError} from '../actions/actions'
 
-function Covid19Table ({requestStart, requestSuccess, requestError, state}) {
+function Covid19Table ({requestStart, requestSuccess, requestError, baseCountry,}) {
   const rows = renderRows(state)
     
    return(

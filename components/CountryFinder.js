@@ -5,7 +5,7 @@ export default function CountryFinder(props){
   const [status, setStatus] = useState('inactive')
   const [country, setCountry] = useState('')
 function handleShortcut(e){
-  if(e.key="enter")
+  if(e.key=="enter")
     props.compareStart(country)
 }
   return(

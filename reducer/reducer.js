@@ -14,6 +14,7 @@ export default function reducer(state = initialState, action){
             console.log("where are")
             return {...state, hidden:false, message : {type:"info", text:"loading"} }
         case types.COMPARE_SUCCESS:
+            console.log("successful")
             return {...state, compareCountry : transformPayload(action.payload)}
         default:
             return state

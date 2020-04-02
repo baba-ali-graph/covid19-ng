@@ -1,6 +1,6 @@
 import {takeEvery} from 'redux-saga/effects'
 import {REQUEST_START, REQUEST_SUCCESS, REQUEST_FAILURE} from '../actions/types'
-export defafunction* watchAppLoad(){
+export default function* watchAppLoad(){
     yield takeEvery(REQUEST_START, fetchNigeriaDetails)
 }
 

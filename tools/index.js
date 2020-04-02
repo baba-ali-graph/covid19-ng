@@ -34,3 +34,14 @@ export const resolveModifierClass = (count, result) => {
   }
   return result < 0 ? "lower" : "higher"
 }
+
+export const transformPayload = (payload) => {
+    console.log(payload)
+    let country = {
+        total : payload.confirmed.value,
+        recovered : payload.recovered.value,
+        active : payload.active.value,
+        deaths : payload.deaths.value
+    }
+    return country
+}

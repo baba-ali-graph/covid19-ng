@@ -8,7 +8,6 @@ import {requestStart, requestSuccess, requestError} from '../actions/actions'
 
 function Covid19Table ({requestStart, requestSuccess, requestError, state}) {
   const rows = renderRows(state)
-  requestStart()
     
    return(
          <div className='table-container'>

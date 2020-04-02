@@ -13,8 +13,8 @@ function handleShortcut(e){
       <label> Compare : </label>
       <input 
         className={'country-finder-input' + status}
-        focusIn={e=> setStatus('active')}
-        focusOut={e=> setStatus('inactive')}
+        onFocus={e=> setStatus('active')}
+        onBlur={e=> setStatus('inactive')}
         onChange={e => setCountry(e.target.value)}
         type='search'
         onKeyDown={e => handleShortcut(e)}

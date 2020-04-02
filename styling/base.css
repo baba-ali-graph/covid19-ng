@@ -41,6 +41,81 @@ body  {
 .hidden {
   display:none;
 }
+
+@media only screen and (min-width:600px) and (max-width:1400px) {
+  .app-body {
+    width:100%;
+    height:100vh;
+    display:grid;
+    margin:auto;
+    grid-template-areas : "h h h h h h h"
+                          "b b w w w w ."
+                          "b b w w w w ."
+                          ". . w w w w ."
+                          ". . t t t t ."
+                          ". . t t t t ."
+                          "c . t t t t ."
+                          ". . t t t t ."
+                          ". . . . . . ."
+                          "d d . . . . ."
+                          ". . i i i . ."
+                          ". . i i i . ."
+                          ". . i i i . ."
+                          ". . i i i . ."
+                          "e . . . . . a";
+  }
+/*    b - day-banner
+      h - app-header
+      w - welcome-text
+      c - country-finder
+      d - news-headline
+      i - news-item
+      e - email-link
+      a - @aleeycreative account link
+ */
+
+ .app-header {
+   grid-area: h;
+   text-align:center;
+   padding:2px;
+   margin-bottom:30px;
+   background:var(--color-4);
+   font-size:1.6em; 
+   font-family:Pattaya;
+   color:var(--color-1);
+ }
+ .day-banner {
+   grid-area:b;
+   padding:15px;
+   width:200px;
+   text-align:center;
+   margin:auto;
+   font-size:1.4em;
+   display:flex;
+   flex-flow:column wap;
+   justify-content:center;
+   align-items:center;
+   border:1px solid var(--color-3);
+ }
+ .welcome-text {
+   grid-area : w;
+   mwidth:400px;
+   display:flex;
+   justify-content:center;
+   font-size:1.4em;
+ }
+ .country-finder-container {
+   grid-area : c;
+   width:200px;
+   margin:auto;
+ }
+ .table-container {
+   grid-area : t;
+ }
+ 
+}
+
+
 @media only screen and (max-width:550px) {
 
 

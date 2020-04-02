@@ -1,18 +1,20 @@
 import {put, takeEvery} from 'redux-saga/effects'
-import {COMPARE_START, COMPARE_SUCCESS, COMPARE_FAILED} from '../actions/types'
+import {REQUEST_START, COMPARE_SUCCESS, REQUEST_FAILED} from '../actions/types'
+import {compareEndpoint} from '../api/index'
 
 export function* watchCompareButton(){
-    yield takeEvery(COMPARE_START, fetchCountry)
+    yield takeEvery(REQUEST_START, fetchCountry)
 }
 
 function* fetchCountry(action){
     try{
-        let country = yield fetch(endpointCompare(action.data))
+        console.log("trying to communicate with server")
+        let country = yield fetch(compareEndpoint(action.payload))
         country = yield country.json()
-        yield put({type:COMPARE_SUCCESS, data : country})
+        yield put({type:COMPARE_SUCCESS, payload : country})
         
     }
     catch(e) {
-        yield put({type:COMPARE_FAILED, data:e})
+        yield put({type:REQUEST_FAILED, data:e})
     }
 }

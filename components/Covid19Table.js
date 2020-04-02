@@ -1,15 +1,16 @@
-import React, {Fragment} from 'react'
+import React, {Fragment, useEffect} from 'react'
 import TableHeading from './TableHeading'
 import CompareRow from './CompareRow'
 import {initialState} from '../reducer/reducer'
 import {connect} from 'react-redux'
 import {resolveModifierClass} from '../tools/index'
+import {requestStart, requestSuccess, requestError} from '../actions/actions'
 
-
-function Covid19Table ({state}) {
-     const rows = renderRows(state)
-     
-     return(
+function Covid19Table ({requestStart, requestSuccess, requestError, state}) {
+  const rows = renderRows(state)
+  requestStart()
+    
+   return(
          <div className='table-container'>
             <table>
                 <TableHeading />
@@ -19,8 +20,9 @@ function Covid19Table ({state}) {
     )
 }
 
+      
 function renderRows(state) {
-      return(
+    return(
         <tbody>
         <tr> {renderCountry(state.baseCountry)} </tr>
         <tr className='row-compare-country'> {state.compareCountry ? renderCountry(state.compareCountry) : <td> {state.error} </td> } </tr>
@@ -60,4 +62,9 @@ const mapStateToProps = (state) => ({
 state : state
 })
 
+const mapDispatchToProps = (dispatch) => ({
+    requestStart : () => dispatch(requestStart()),
+    requestSuccess : (payload) => dispatch(requestSuccess(payload)),
+    requestError : (error) => dispatch(requestError(error))
+})
  export default connect(mapStateToProps)(Covid19Table)

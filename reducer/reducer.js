@@ -7,7 +7,7 @@ console.log(currentDay)
 export default function reducer(state = initialState, action){
     switch(action.type){
         case types.REQUEST_SUCCESS:
-            return {...state, baseCountry : transformPayload(action.payload)}
+            return {...state, ...action.payload}
         case types.REQUEST_FAILURE:
             return {...state, message : {type:"error", text : "An error occured"}}
         case types.REQUEST_START:

@@ -54,5 +54,14 @@ export const getBaseCountry = () => {
   .catch(err => false)
 } 
 
-export const daysSinceOutbreak = () => 0
-export const daysSinceOutbreakInNigeria = () => 0
+export const daysSinceOutbreak = () => {
+  let startDate = new Date(2019,11,0)
+  let today = new Date()
+  return parseInt((today - startDate)/(30*24*60*60*1000))
+}
+
+export const daysSinceOutbreakInNigeria = () => {
+  let startDate = new Date(2020,1,17)
+  let today = new Date()
+  return parseInt((today - startDate)/(24*60*60*1000))
+}

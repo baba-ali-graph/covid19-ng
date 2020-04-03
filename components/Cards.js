@@ -9,14 +9,14 @@ export default function Cards(props){
         <>
          <Card
             icon='calendar-text-outline'
-            title={'Day ' + daysSinceOutbreak()}
-            text="Since the first case was recorded globally"
+            title={ daysSinceOutbreak() + ' Months' }
+            text="Since the Covid-19 began"
          />
          
          <Card
             icon='calendar-today'
-            title={'Day ' + daysSinceOutbreakInNigeria()}
-            text="Since the first case was recorded Nigeria"
+            title={daysSinceOutbreakInNigeria() + ' Days'}
+            text="Since the first case was recorded  Nigeria"
          />
          
          <Card
@@ -31,7 +31,7 @@ export default function Cards(props){
 
 Cards.defaultProps = {
   baseCountry : {total:173},
-  totalGlobally : 14598
+  totalGlobally : 145983
 }
 const mapStateToProps = (state) => ({
   baseCountry : state.baseCountry,

@@ -6,9 +6,9 @@ import {connect} from 'react-redux'
 import {resolveModifierClass} from '../tools/index'
 import {requestStart, requestSuccess, requestError} from '../actions/actions'
 
-function Covid19Table ({requestStart, requestSuccess, requestError, baseCountry,}) {
+function Covid19Table ({requestError, state}) {
   const rows = renderRows(state)
-    
+  if(state.baseCountry){
    return(
          <div className='table-container'>
             <table>
@@ -17,6 +17,11 @@ function Covid19Table ({requestStart, requestSuccess, requestError, baseCountry,
             </table>
          </div>
     )
+  }
+  else {
+      // useEffect(() => {requestError()})
+      return <> </>
+}
 }
 
       
@@ -33,8 +38,11 @@ function renderRows(state) {
 
 function renderCountry(country){
     let cells = []
+    let count = 0
     for (let key in country){
-        cells.push(<td> {country[key]} </td> )
+        let percent = parseInt((Math.abs(country[key]/country['total'])) * 100)
+        cells.push(<td> {country[key]} {count > 0 && percent + '%'} </td> )
+        count++
     }
     return cells
 }
@@ -51,10 +59,6 @@ export default function renderComparism(a,b){
         count++
     }
     return cells
-}
-
-Covid19Table.defaultProps = {
-  state : initialState
 }
 
 const mapStateToProps = (state) => ({

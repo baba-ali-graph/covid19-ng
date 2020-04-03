@@ -42,26 +42,25 @@ body  {
   display:none;
 }
 
-@media only screen and (min-width:600px) and (max-width:1400px) {
   .app-body {
     width:100%;
     height:100vh;
     display:grid;
     margin:auto;
     grid-template-areas : "h h h h h h h"
-                          "b b w w w w ."
-                          "b b w w w w ."
-                          ". . w w w w ."
-                          ". . t t t t ."
-                          ". . t t t t ."
-                          "c . t t t t ."
-                          ". . t t t t ."
-                          ". . . . . . ."
-                          "d d . . . . ."
-                          ". . i i i . ."
-                          ". . i i i . ."
-                          ". . i i i . ."
-                          ". . i i i . ."
+                          "b b w w w w s"
+                          "b b w w w w s"
+                          ". . w w w w s"
+                          ". . t t t t s"
+                          ". . t t t t s"
+                          "c . t t t t s"
+                          ". . t t t t s"
+                          ". . . . . . s"
+                          "d d . . . . s"
+                          ". . i i i . s"
+                          ". . i i i . s"
+                          ". . i i i . s"
+                          ". . i i i . s"
                           "e . . . . . a";
   }
 /*    b - day-banner
@@ -99,71 +98,22 @@ body  {
  }
  .welcome-text {
    grid-area : w;
-   mwidth:400px;
+   max-width:400px;
    display:flex;
    justify-content:center;
    font-size:1.4em;
  }
- .country-finder-container {
-   grid-area : c;
-   width:200px;
-   margin:auto;
- }
+ 
  .table-container {
    grid-area : t;
+   margin:10px;
  }
  
-}
-
-
-@media only screen and (max-width:550px) {
-
-
-.app-header {
-    padding:6px;
-    margin-bottom:30px;
-    background:var(--color-4);
-    text-align:center;
-    font-family:Pattaya;
-    color:var(--color-1);
-}
-
-h2 {
-    font-size:1.5em;
-}
-h3 {
-    font-size:1.3em;
-}
-.day-banner {
-    width:170px;
-    padding:15px;
-    text-align:center;
-    margin:auto;
-    display:flex;
-    flex-flow:column wap;
-    justify-content:center;
-    align-items:center;
-    border:1px solid var(--color-3);
-}
-p {
-    padding:10px;
-    font-size:.9em;
-}
-p.welcome-text {
-  width:50vh;
-  display:flex;
-  justify-content:center;
-  margin:auto;
-  font-size:1.2em
-}
-.table-container {
-    margin:10px; /* ? */   
-}
-
+ 
 table {
     box-sizing : border-box;
-    width:100%; /* ? */
-    font-size:1.1em; /* ? */
+    max-width:400px;
+    font-size:1.4em; 
     text-align:center;
 
 }
@@ -192,13 +142,16 @@ tbody tr.compare-row td.higher {
     color:red;
 }
 .country-finder-container {
-    display:flex;
-    flex-flow:column wrap;
-    justify-content:center;
-    align-items:center;
+   grid-area : c;
+   width:200px;
+   margin:auto;
+   display:flex;
+   flex-flow:column wrap;
+   justify-content:center;
+   align-items:center;
 }
 .country-finder-container label {
-    margin-bottom:4px;
+    margin-bottom:8px;
 }
 .country-finder-input {
     border:.6px solid var(--color-3);
@@ -214,6 +167,89 @@ tbody tr.compare-row td.higher {
   margin:5px auto;
   box-shadow:grey 1px 1px 2px 1px;
 }
+
+ 
+ .side-info-container {
+     grid-area : s;
+}
+.side-info-container * {
+    margin:auto;
+    max-width:220px;
+}
+.card-item {
+    background:var(--color-4);
+    color:var(--color-1);
+    margin:20px;
+    display:flex;
+    flex-flow:column wrap;
+    justify-content:space-between;
+    align-items:center;
+}
+.card-item-icon {
+    font-size:32px;
+}
+.card-item h2 {
+    font-size: 1.5em;
+}
+.card-item p {
+    text-align:center;
+}
+
+.card-hotline {
+    text-align:center;
+}
+.card-hotline-title {
+    padding:5px;
+}
+.card-hotline p {
+    width:100%;
+    display:flex;
+    flex-flow:column wrap;
+    justify-content:center;
+    align-items:center;
+}
+
+@media only screen and (max-width:550px) {
+
+.app-body {
+    display:block;
+}
+
+.app-header {
+    padding:6px;
+    font-size:1.2em;
+}
+
+h2 {
+    font-size:1.5em;
+}
+h3 {
+    font-size:1.3em;
+}
+.day-banner {
+    width:170px;
+    padding:15px;
+}
+
+p {
+    padding:10px;
+    font-size:.9em;
+}
+p.welcome-text {
+  width:50vh;
+  font-size:1.2em
+}
+.table-container {
+    margin:10px; /* ? */   
+}
+
+table {
+    box-sizing : border-box;
+    width:100%; /* ? */
+    font-size:1.1em; /* ? */
+
+}
+
 
 h3.news-update {
     width:200px;
@@ -237,6 +273,5 @@ h3.news-update {
     max-width:160px;
     color:var(--color-4);
 }
-
 
 }

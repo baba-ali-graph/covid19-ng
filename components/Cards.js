@@ -16,7 +16,7 @@ export default function Cards(props){
          <Card
             icon='calendar-today'
             title={daysSinceOutbreakInNigeria() + ' Days'}
-            text="Since the first case was recorded  Nigeria"
+            text="Since the first case was recorded in Nigeria"
          />
          
          <Card

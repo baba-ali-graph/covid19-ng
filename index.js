@@ -9,6 +9,7 @@ import WelcomeText from './components/WelcomeText'
 import MessageBar from './components/MessageBar'
 import CountryFinder from './components/CountryFinder'
 import SideInfo from './components/SideInfo'
+import References from './components/References'
 import store from './store/index'
 import {Provider} from 'react-redux'
 import {getBaseCountry} from './tools/index'
@@ -29,6 +30,7 @@ import "./styling/base.css"
       <SideInfo />
       <NewsUpdate />
       <SocialButtons />
+      <References />
       <MessageBar />
     </Provider>
      </div>

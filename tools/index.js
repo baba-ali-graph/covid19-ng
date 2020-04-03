@@ -1,3 +1,4 @@
+import {endpoint} from '../api/index'
 export const currentDay = parseInt(
   (new Date() - new Date(2020, 1, 17)) / (1000 * 60 * 60 * 24)
 );
@@ -45,3 +46,13 @@ export const transformPayload = (payload) => {
     }
     return country
 }
+
+export const getBaseCountry = () => {
+  return fetch(endpoint)
+  .then(res => res.json())
+  .then(res => res)
+  .catch(err => false)
+} 
+
+export const daysSinceOutbreak = () => 0
+export const daysSinceOutbreakInNigeria = () => 0

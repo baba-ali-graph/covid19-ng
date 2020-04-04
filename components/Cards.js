@@ -4,13 +4,21 @@ import {daysSinceOutbreak, percentOf, daysSinceOutbreakInNigeria} from '../tools
 import {connect} from 'react-redux'
 
 export default function Cards(props){
-    const {baseCountry, totalGlobally} = props
+    const {baseCountry, globally} = props
     return(
         <>
+        {globally &&
+        <Card
+            icon='earth'
+            title={ globally.confirmed.value }
+            text="Confirmed cases globally"
+         />
+         }
+         
          <Card
             icon='calendar-text-outline'
             title={ '+' + daysSinceOutbreak() + ' Months' }
-            text="Since Covid-19  d"
+            text="Since Covid-19 outbreak"
          />
          
          <Card
@@ -18,10 +26,18 @@ export default function Cards(props){
             title={daysSinceOutbreakInNigeria() + ' Days'}
             text="Since the first case was recorded in Nigeria"
          />
+         {baseCountry &&
+         <Card
+            icon='account-multiple-check-outline'
+            title={ parseInt((baseCountry.recovered / baseCountry.confirmed) * 100) }
+            text="has recovered in Nigeria"
+         />
+        }
+         
          
          <Card
             icon='percent-outline'
-            title={percentOf(baseCountry.total, totalGlobally,1) + "%"}
+            title={percentOf(baseCountry.confirmed, globally,1) + "%"}
             text="Cases of all cases globally are in Nigeria"
          />
                   
@@ -35,7 +51,7 @@ Cards.defaultProps = {
 }
 const mapStateToProps = (state) => ({
   baseCountry : state.baseCountry,
-  totalGlobally : state.totalGlobally
+  globally : state.globally
 })
 
 export default connect(mapStateToProps)(Cards)

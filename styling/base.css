@@ -48,19 +48,19 @@ body  {
     display:grid;
     margin:auto;
     grid-template-areas : "h h h h h h h"
-                          "b b w w w w s"
-                          "b b w w w w s"
-                          ". . w w w w s"
-                          ". . t t t t s"
-                          ". . t t t t s"
-                          "c . t t t t s"
-                          ". . t t t t s"
-                          ". . . . . . s"
-                          "d d . . . . s"
-                          ". . i i i . s"
-                          ". . i i i . s"
-                          ". . i i i . s"
-                          ". . i i i . s"
+                          ". . w w w w ."
+                          ". . w w w w ."
+                          ". . s s s s ."
+                          ". . s s s s ."
+                          ". . . . . . ."
+                          ". c t t t t ."
+                          ". . t t t t ."
+                          ". . t t t t ."
+                          "d d . . . . ."
+                          ". . i i i . ."
+                          ". . i i i . ."
+                          ". . i i i . ."
+                          ". . i i i . ."
                           "e . . . . . a";
   }
 /*    b - day-banner
@@ -181,6 +181,9 @@ tbody tr.compare-row td.lower-recovrd {
  
  .side-info-container {
      grid-area : s;
+     display:flex;
+     flex-flow:row wrap;
+     align-items:center;
 }
 .side-info-container * {
     margin:auto;
@@ -253,7 +256,9 @@ p.welcome-text {
 .table-container {
     margin:10px; /* ? */   
 }
-
+.side-item-container {
+  display:block;
+}
 table {
     box-sizing : border-box;
     width:100%; /* ? */

@@ -112,7 +112,7 @@ body  {
  
 table {
     box-sizing : border-box;
-    max-width:400px;
+    max-width:00px;
     font-size:1.4em; 
     text-align:center;
 
@@ -125,12 +125,15 @@ table {
 }
 tbody tr {
     color:var(--color-4);
+    padding:20px;
 }
 tbody tr.row-compare-country {
     background:var(--color-3);
   
 }
-
+tbody tr td {
+  padding:10px;
+}
 
 tbody tr.compare-row {
     font-size:.8em; /* ? */
@@ -139,7 +142,7 @@ tbody tr.compare-row td.lower {
     color:chocolate;
 }
 tbody tr.compare-row td.higher {
-    color:green;
+    color:rgb(206, 77, 77);
 }
 
 tbody tr.compare-row td.higer-recovrd {

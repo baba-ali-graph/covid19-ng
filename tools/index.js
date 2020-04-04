@@ -37,9 +37,7 @@ export const msgUI = msgType => {
 
 export const resolveModifierClass = (count, result) => {
     let iconUp = "mdi mdi-arrow-up-bold", iconDown = "mdi mdi-arrow-down-bold"
-  if(count == 1 ) { // representing the second index whihc the recovered field of the json data.
-    return result < 0 ? `higher-recovrd ${iconUp}` : `lower ${iconDown}`
-  }
+
   return result < 0 ? `lower ${iconDown}` : `higher ${iconUp}`
 }
 
@@ -47,7 +45,7 @@ export const transformPayload = (payload) => {
     console.log(payload)
     let country = {
         country : payload.confirmed.detail.split("/")[5],
-        total : payload.confirmed.value,
+        confirmed : payload.confirmed.value,
         recovered : payload.recovered.value,
         deaths : payload.deaths.value
     }
@@ -81,3 +79,5 @@ export const generateMsg = (type) => {
             return {type:"progress", text:"Fetching Data"}
     }
 } 
+
+export const computeRecoveryRate = ({confirmed, recovered}) => parseInt((recovered/confirmed) * 100)

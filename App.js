@@ -22,7 +22,6 @@ import "./styling/base.css"
    return(
      <div className='app-body'>
       <AppHeader />
-      <DayBanner />
       <WelcomeText />
       <Covid19Table />
       <CountryFinder/>

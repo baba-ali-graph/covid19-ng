@@ -5,7 +5,7 @@ export default function () {
   <thead>
     <tr className='table-header'> 
       <th> Country </th>
-      <th> Total </th>
+      <th> Confirmed </th>
       <th> {isMobileView() ? "Recovd" : "Recovered"}(%) </th>
       <th> Deaths(%) </th>
     </tr>

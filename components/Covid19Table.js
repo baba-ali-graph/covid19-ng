@@ -5,7 +5,7 @@ import {initialState} from '../reducer/reducer'
 import {connect} from 'react-redux'
 import {resolveModifierClass, percentCompute} from '../tools/index'
 import {requestStart, requestSuccess, requestError} from '../actions/actions'
-
+import Loading from './Loading'
 function Covid19Table ({requestError, state}) {
   const rows = renderRows(state)
   if(state.baseCountry){
@@ -19,8 +19,7 @@ function Covid19Table ({requestError, state}) {
     )
   }
   else {
-      // useEffect(() => {requestError()})
-      return <> </>
+      return <Loading />
 }
 }
 
@@ -40,8 +39,8 @@ function renderCountry(country){
     let cells = []
     let count = 0
     for (let key in country){
-        let percent = parseInt((Math.abs(country[key]/country['total'])) * 100)
-        cells.push(<td> {country[key]} {count > 0  && <span className="percent"> ({percent}%) </span> } </td> )
+        let percent = parseInt((Math.abs(country[key]/country['confirmed'])) * 100)
+        cells.push(<td> {country[key]} {count > 1  && <span className="percent"> ({percent}%) </span> } </td> )
         count++
     }
     return cells
@@ -52,8 +51,9 @@ export default function renderComparism(a,b){
     let count = 0
     for(let key in a){ // Since 'a' and 'b' are expected to have the same keys, I wont repeat for 'b'.
         let result = a[key] - b[key]
-        let modifierClass = resolveModifierClass(key,result) // is Nigeria higher than comparedCountry for the metric ? 
-        let percent = percentCompute(a['total'],a[key],b['total'],b[key]) 
+         // is Nigeria higher than comparedCountry for the metric ? 
+        let percent = percentCompute(a['confirmed'],a[key],b['confirmed'],b[key]) 
+        let modifierClass = resolveModifierClass(key,percent)
         let comment = percent < 0 ? 'lower' : 'higher'
         percent = Math.abs(percent)
         cells.push(count == 0 ? <td> Diff </td> : percent == 0 ? <td> 0 </td> : <td className={modifierClass}> <span className="percent"> {percent}% ({comment}) </span> </td>)

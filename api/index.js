@@ -1,5 +1,5 @@
 export const endpoint = "https://covid19.mathdro.id/api/countries/Nigeria"
-export const endpoint = (country = "") => `https://covid19.mathdro.id/api/countries/${country}`
+export const endpoint = (country) => `https://covid19.mathdro.id/api/${country ? 'countries/' + country : ""}`
 
 export async function get(){
   try {

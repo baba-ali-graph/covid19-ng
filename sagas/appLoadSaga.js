@@ -9,9 +9,10 @@ function* fetchAppData(){
     try{
         console.log("fetching ")
         let globally = yield fetch(endpoint)
-        let baseCountry = yield (endpoint('Nigeria'))
+        let baseCountry = yield fetch(endpoint('Nigeria'))
         globally = yield globally.json()
         baseCountry = yield baseCountry.json()
+        console.log(baseCount)
         let resp = {baseCountry : transformPayload(baseCountry), totalGlobally: globally.total.value}
             yield put({type:REQUEST_SUCCESS, payload : resp})
     }

@@ -9,8 +9,8 @@ export default function Cards(props){
         <>
          <Card
             icon='calendar-text-outline'
-            title={ daysSinceOutbreak() + ' Months' }
-            text="Since the Covid-19 began"
+            title={ '+' + daysSinceOutbreak() + ' Months' }
+            text="Since Covid-19  d"
          />
          
          <Card

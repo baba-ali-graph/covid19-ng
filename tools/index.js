@@ -68,7 +68,7 @@ export const daysSinceOutbreak = () => {
 }
 
 export const daysSinceOutbreakInNigeria = () => {
-  let startDate = new Date(2020,1,17)
+  let startDate = new Date(2020,1,27)
   let today = new Date()
   return parseInt((today - startDate)/(24*60*60*1000))
 }

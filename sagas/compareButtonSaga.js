@@ -1,7 +1,7 @@
 import {put, takeEvery} from 'redux-saga/effects'
 import {COMPARE_START, COMPARE_SUCCESS, REQUEST_FAILED} from '../actions/types'
 import {endpoint} from '../api/index'
-i
+import {transformPayload} from '../tools/index'
 
 export default function* watchCompareButton(){
     yield takeEvery(COMPARE_START, fetchCountry)

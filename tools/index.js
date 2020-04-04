@@ -65,3 +65,12 @@ export const daysSinceOutbreakInNigeria = () => {
   let today = new Date()
   return parseInt((today - startDate)/(24*60*60*1000))
 }
+
+export const generateMsg = (type) => {
+    switch (type) {
+        case "error":
+            return {type:"error", text:"Error loading data !"}
+        case "progress":
+            return {type:"progress", text:"Fetching Data"}
+    }
+} 

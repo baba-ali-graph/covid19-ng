@@ -4,3 +4,4 @@ export const compareStart = (payload) => ({type:type.COMPARE_START, payload : pa
 export const requestSuccess = (payload) => ({type:type.REQUEST_SUCCESS, payload})
 export const compareSuccess = (payload) => ({type:type.COMPARE_SUCCESS, payload})
 export const requestError = (payload) => ({type:type.REQUEST_ERROR, payload})
+export const hideMessage = () => ({type:type.HIDE_MESSAGE})

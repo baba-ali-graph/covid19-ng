@@ -8,6 +8,12 @@ export const percentOf = (x, y, sig = 6) => {
   return result.toFixed(sig);
 };
 
+export const percentCompute = (xTotal,xValue,yTotal,yValue) => {
+    let xPercent = parseInt((xValue/xTotal) * 100)
+    let yPercent = parseInt((yValue/yTotal) * 100)
+    let diffPercent = xPercent - yPercent
+    return diffPercent
+}
 export const isMobileView = () => window.innerWidth < 500;
 
 export const autoHiding = (hidden, duration = 500) => {

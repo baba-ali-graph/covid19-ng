@@ -3,7 +3,7 @@ import TableHeading from './TableHeading'
 import CompareRow from './CompareRow'
 import {initialState} from '../reducer/reducer'
 import {connect} from 'react-redux'
-import {resolveModifierClass} from '../tools/index'
+import {resolveModifierClass, percentCompute} from '../tools/index'
 import {requestStart, requestSuccess, requestError} from '../actions/actions'
 
 function Covid19Table ({requestError, state}) {
@@ -53,9 +53,8 @@ export default function renderComparism(a,b){
     for(let key in a){ // Since 'a' and 'b' are expected to have the same keys, I wont repeat for 'b'.
         let result = a[key] - b[key]
         let modifierClass = resolveModifierClass(key,result) // is Nigeria higher than comparedCountry for the metric ? 
-        let denominator = a[key] > b[key] ? a[key] : b[key]
-        let percent = parseInt((Math.abs(result) / denominator) * 100) 
-        cells.push(count == 0 || count == 1 ? <td> Diff </td> : <td className={modifierClass}> <span className="percent"> ({percent}%) </span> {modifierClass} </td>)
+        let percent = percentCompute(a['total'],a[key],b['total'],b[key]) 
+        cells.push(count == 0 ? <td> Diff </td> : percent == 0 ? <td> 0 </td> : <td className={modifierClass}> <span className="percent"> ({percent}%) </span> </td>)
         count++
     }
     return cells

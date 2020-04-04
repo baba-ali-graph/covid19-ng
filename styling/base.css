@@ -136,9 +136,16 @@ tbody tr.compare-row {
     font-size:.8em; /* ? */
 }
 tbody tr.compare-row td.lower {
-    color:lightbrown
+    color:pink;
 }
 tbody tr.compare-row td.higher {
+    color:green;
+}
+
+tbody tr.compare-row td.higer-recovrd {
+    color:green;
+}
+tbody tr.compare-row td.lower-recovrd {
     color:red;
 }
 .country-finder-container {
@@ -237,7 +244,7 @@ p {
 }
 p.welcome-text {
   width:50vh;
-  margin:aut
+  margin:auto;
   font-size:1.2em
 }
 .table-container {

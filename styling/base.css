@@ -136,7 +136,7 @@ tbody tr.compare-row {
     font-size:.8em; /* ? */
 }
 tbody tr.compare-row td.lower {
-    color:pink;
+    color:chocolate;
 }
 tbody tr.compare-row td.higher {
     color:green;

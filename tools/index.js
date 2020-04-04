@@ -36,10 +36,11 @@ export const msgUI = msgType => {
 };
 
 export const resolveModifierClass = (count, result) => {
+    let iconUp = "mdi mdi-arrow-up-bold", iconDown = "mdi mdi-arrow-down-bold"
   if(count == 1 ) { // representing the second index whihc the recovered field of the json data.
-    return result < 0 ? "higher" : "lower"
+    return result < 0 ? `higher-recovrd ${iconUp}` : `lower ${iconDown}`
   }
-  return result < 0 ? "lower" : "higher"
+  return result < 0 ? `lower ${iconDown}` : `higher ${iconUp}`
 }
 
 export const transformPayload = (payload) => {

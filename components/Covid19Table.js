@@ -54,7 +54,9 @@ export default function renderComparism(a,b){
         let result = a[key] - b[key]
         let modifierClass = resolveModifierClass(key,result) // is Nigeria higher than comparedCountry for the metric ? 
         let percent = percentCompute(a['total'],a[key],b['total'],b[key]) 
-        cells.push(count == 0 ? <td> Diff </td> : percent == 0 ? <td> 0 </td> : <td className={modifierClass}> <span className="percent"> ({percent}%) </span> </td>)
+        let comment = percent < 0 ? 'lower' : 'higher'
+        percent = Math.abs(percent)
+        cells.push(count == 0 ? <td> Diff </td> : percent == 0 ? <td> 0 </td> : <td className={modifierClass}> <span className="percent"> {percent}% ({comment}) </span> </td>)
         count++
     }
     return cells

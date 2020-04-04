@@ -7,7 +7,6 @@ export default function () {
       <th> Country </th>
       <th> Total </th>
       <th> {isMobileView() ? "Recovd" : "Recovered"}(%) </th>
-      <th> Active(%) </th>
       <th> Deaths(%) </th>
     </tr>
   </thead>  

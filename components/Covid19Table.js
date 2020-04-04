@@ -41,7 +41,7 @@ function renderCountry(country){
     let count = 0
     for (let key in country){
         let percent = parseInt((Math.abs(country[key]/country['total'])) * 100)
-        cells.push(<td> {country[key]} {count > 0 && percent + '%'} </td> )
+        cells.push(<td> {country[key]} {count > 0  && <span className="percent"> ({percent}%) </span> } </td> )
         count++
     }
     return cells
@@ -55,7 +55,7 @@ export default function renderComparism(a,b){
         let modifierClass = resolveModifierClass(key,result) // is Nigeria higher than comparedCountry for the metric ? 
         let denominator = a[key] > b[key] ? a[key] : b[key]
         let percent = parseInt((Math.abs(result) / denominator) * 100) 
-        cells.push(count == 0 ? <td> Diff </td> : <td className={modifierClass}> {percent} % {modifierClass} </td>)
+        cells.push(count == 0 || coun ? <td> Diff </td> : <td className={modifierClass}> <span className="percent"> ({percent}%) </span> {modifierClass} </td>)
         count++
     }
     return cells

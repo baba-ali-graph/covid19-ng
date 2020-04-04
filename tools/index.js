@@ -39,9 +39,9 @@ export const resolveModifierClass = (count, result) => {
 export const transformPayload = (payload) => {
     console.log(payload)
     let country = {
+        country : payload.confirmed.detail.split("/")[5],
         total : payload.confirmed.value,
         recovered : payload.recovered.value,
-        active : payload.active.value,
         deaths : payload.deaths.value
     }
     return country

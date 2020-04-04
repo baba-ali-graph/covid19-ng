@@ -12,7 +12,7 @@ export default function reducer(state = {}, action){
         case types.REQUEST_FAILED:
             return {...state, message : generateMsg('error')}
         case types.REQUEST_START:
-            return {...state, message : generateMsg('loading') }
+            return {...state, message : generateMsg('progress') }
         case types.COMPARE_SUCCESS:
             console.log("successful")
             return {...state, compareCountry : transformPayload(action.payload)}

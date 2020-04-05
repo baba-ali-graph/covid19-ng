@@ -87,10 +87,12 @@ a {
  
  .table-container {
    margin:10px auto;
+   
  }
  
  
 table {
+    margin:auto;
     box-sizing : border-box;
     font-size:1.5em; 
     text-align:center;
@@ -160,7 +162,7 @@ tbody tr.compare-row td.lower-recovrd {
      display:flex;
      flex-flow:row wrap;
      align-items:center;
-     justify-conten:space-between;
+     justify-content:space-between;
 }
 
 .card-item {
@@ -170,8 +172,8 @@ tbody tr.compare-row td.lower-recovrd {
     display:flex;
     width:300px;
     height:250px;
-    flex-flow:column wrap;
-    justify-content:space-between;
+    flex-flow:column nowrap;
+    justify-content:center;
     align-items:center;
 }
 
@@ -201,8 +203,7 @@ tbody tr.compare-row td.lower-recovrd {
   flex-flow:column wrap;
 }
 @media only screen and (max-width:550px) {
-.app-body {
-}
+
 
 .app-header {
     padding:6px;
@@ -219,9 +220,7 @@ p {
   margin:auto;
   font-size:1.2em;
 }
-.table-container {
-    margin:10px; /* ? */   
-}
+
 table {
     font-size:1.2em;
 }

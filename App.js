@@ -9,8 +9,7 @@ import WelcomeText from './components/WelcomeText'
 import MessageBar from './components/MessageBar'
 import CountryFinder from './components/CountryFinder'
 import Cards from './components/Cards'
-import Hotline from './components/Hotline'
-import References from './components/References'
+import AppFooter from './components/AppFooter'
 import store from './store/index'
 import {connect} from 'react-redux'
 import {requestStart} from './actions/actions'
@@ -29,8 +28,7 @@ import "./styling/base.css"
       <Cards />
       <NewsUpdate />
       <SocialButtons />
-      <References />
-      <Hotline />
+      <AppFooter />
       <MessageBar />
      </div>
    )

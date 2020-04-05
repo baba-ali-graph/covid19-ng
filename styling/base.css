@@ -78,9 +78,11 @@ a {
    align-items:center;
    border:1px solid var(--color-3);
  }
+ /* Welcome Message */
  .welcome-text {
    max-width:500px;
    display:flex;
+   margin:auto;
    justify-content:center;
    font-size:1.6em;
  }
@@ -114,6 +116,9 @@ tbody tr.row-compare-country {
 }
 tbody tr td {
   padding:10px;
+}
+tr,td {
+  padding:10px 20px;
 }
 
 tbody tr.compare-row {
@@ -162,7 +167,9 @@ tbody tr.compare-row td.lower-recovrd {
      display:flex;
      flex-flow:row wrap;
      align-items:center;
+     width: 60%; /** 70% and 100% **/
      justify-content:space-between;
+     margin:auto;
 }
 
 .card-item {
@@ -182,10 +189,13 @@ tbody tr.compare-row td.lower-recovrd {
 }
 .card-item h2 {
     font-size: 2.3em;
+    margin:2px;
 }
 .card-item p {
     text-align:center;
     padding:10px;
+    margin: 2px;
+    width:80%;
 }
 
 .card-hotline {
@@ -194,7 +204,11 @@ tbody tr.compare-row td.lower-recovrd {
     flex-flow:column wrap;
     justify-content:space-around;
 }
-.card-hotline-title, .reference-container h2 {
+.card-hotline * {
+ display: block;
+ width:80%;
+}
+.card-hotline-title {
     text-align:center;
 }
 
@@ -202,6 +216,30 @@ tbody tr.compare-row td.lower-recovrd {
   display:flex;
   flex-flow:column wrap;
 }
+.references-container h2 {
+  text-align:center;
+}
+
+footer {
+  background:var(--color-1);
+  display:flex;
+  flex-flow:column nowrap;
+}
+.top-footer {
+  display:flex;
+  flex-flow:row nowrap;
+  justify-content:space-between;
+  align-items:center;
+}
+.bottom-footer{
+  display:flex;
+  flex-flow:column wrap;
+  justify-content:center;
+  align-items:center;
+}
+
+
+/* -------------------- BREAKPOINT : MOBILE DEVICES -------------- */
 @media only screen and (max-width:550px) {
 
 

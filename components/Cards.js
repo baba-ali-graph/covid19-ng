@@ -6,7 +6,7 @@ import {connect} from 'react-redux'
 export default function Cards(props){
     const {baseCountry, globally} = props
     return(
-        <>
+        <div className='cards'>
         {globally &&
         <Card
             icon='earth'
@@ -34,21 +34,18 @@ export default function Cards(props){
          />
         }
          
-         
+         {globally && 
          <Card
             icon='percent-outline'
-            title={percentOf(baseCountry.confirmed, globally,1) + "%"}
+            title={percentOf(baseCountry.confirmed, globally.confirmed.value,1) + "%"}
             text="Cases of all cases globally are in Nigeria"
          />
-                  
-        </>
+        }  
+        </div>
     )
 }
 
-Cards.defaultProps = {
-  baseCountry : {total:173},
-  totalGlobally : 145983
-}
+
 const mapStateToProps = (state) => ({
   baseCountry : state.baseCountry,
   globally : state.globally

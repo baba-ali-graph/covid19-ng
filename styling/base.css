@@ -10,7 +10,7 @@
 body  {
   padding:0px;
   margin:0px;
-  background:var(--color-1);
+  background:white;
   font-family:Oswald;
 }
 
@@ -20,7 +20,7 @@ body  {
   align-items:center;
   position:fixed;
   bottom:0px;
-  font-size: .em;
+  font-size: .8em;
   width:100vh;
   padding:5px;
   color:white;
@@ -47,21 +47,16 @@ body  {
     height:100vh;
     display:grid;
     margin:auto;
-    grid-template-areas : "h h h h h h h"
-                          ". . w w w w ."
-                          ". . w w w w ."
-                          ". . s s s s ."
-                          ". . s s s s ."
-                          ". . . . . . ."
-                          ". c t t t t ."
-                          ". . t t t t ."
-                          ". . t t t t ."
-                          "d d . . . . ."
-                          ". . i i i . ."
-                          ". . i i i . ."
-                          ". . i i i . ."
-                          ". . i i i . ."
-                          "e . . . . . a";
+    grid-template-areas : "h h h h h"
+                          ". w w w ."
+                          ". w w w ."
+                          ". c c c ."
+                          ". t t t ."
+                          ". t t t ."
+                          ". f f f ."
+                          ". r . l . "
+                          ". . . . ."
+                          ;
   }
 /*    b - day-banner
       h - app-header
@@ -84,7 +79,6 @@ body  {
    color:var(--color-1);
  }
  .day-banner {
-   grid-area:b;
    padding:15px;
    width:200px;
    text-align:center;
@@ -106,7 +100,7 @@ body  {
  
  .table-container {
    grid-area : t;
-   margin:10px;
+   margin:10px auto;
  }
  
  
@@ -152,7 +146,7 @@ tbody tr.compare-row td.lower-recovrd {
     color:red;
 }
 .country-finder-container {
-   grid-area : c;
+   grid-area:f;
    width:200px;
    margin:auto;
    display:flex;
@@ -179,13 +173,13 @@ tbody tr.compare-row td.lower-recovrd {
 }
 
  
- .side-info-container {
-     grid-area : s;
+ .cards {
+     grid-area: c;
      display:flex;
      flex-flow:row wrap;
      align-items:center;
 }
-.side-info-container * {
+.cards * {
     margin:auto;
     max-width:220px;
 }
@@ -209,6 +203,7 @@ tbody tr.compare-row td.lower-recovrd {
 }
 
 .card-hotline {
+    grid-area:l;
     text-align:center;
 }
 .card-hotline-title {
@@ -221,7 +216,9 @@ tbody tr.compare-row td.lower-recovrd {
     justify-content:center;
     align-items:center;
 }
-
+.references-container {
+  grid-area:r;
+}
 @media only screen and (max-width:550px) {
 
 .app-body {
@@ -256,7 +253,7 @@ p.welcome-text {
 .table-container {
     margin:10px; /* ? */   
 }
-.side-item-container {
+.cards {
   display:block;
 }
 table {

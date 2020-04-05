@@ -8,7 +8,8 @@ import SocialButtons from './components/SocialButtons'
 import WelcomeText from './components/WelcomeText'
 import MessageBar from './components/MessageBar'
 import CountryFinder from './components/CountryFinder'
-import SideInfo from './components/SideInfo'
+import Cards from './components/Cards'
+import Hotline from './components/Hotline'
 import References from './components/References'
 import store from './store/index'
 import {connect} from 'react-redux'
@@ -25,10 +26,11 @@ import "./styling/base.css"
       <WelcomeText />
       <Covid19Table />
       <CountryFinder/>
-      <SideInfo />
+      <Cards />
       <NewsUpdate />
       <SocialButtons />
       <References />
+      <Hotline />
       <MessageBar />
      </div>
    )

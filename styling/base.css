@@ -6,7 +6,7 @@
   --color-4: #3e997d;
   --color-5: #3a6055;
 }
-
+/* Globals */
 body  {
   padding:0px;
   margin:0px;
@@ -14,13 +14,24 @@ body  {
   font-family:Oswald;
 }
 
+.appbody {
+    display:flex;
+    flex-flow:column wrap;
+    justify-content:center;
+    align-items:center;
+}
+
+a {
+  color:var(--color-4) !important;
+}
+/* Message Bar */
 .message-bar {
   display:flex;
   justify-content: flex-start;
   align-items:center;
   position:fixed;
   bottom:0px;
-  font-size: .8em;
+  font-size:.8em;
   width:100vh;
   padding:5px;
   color:white;
@@ -42,42 +53,19 @@ body  {
   display:none;
 }
 
-  .app-body {
-    width:100%;
-    height:100vh;
-    display:grid;
-    margin:auto;
-    grid-template-areas : "h h h h h"
-                          ". w w w ."
-                          ". w w w ."
-                          ". c c c ."
-                          ". t t t ."
-                          ". t t t ."
-                          ". f f f ."
-                          ". r . l . "
-                          ". . . . ."
-                          ;
-  }
-/*    b - day-banner
-      h - app-header
-      w - welcome-text
-      c - country-finder
-      d - news-headline
-      i - news-item
-      e - email-link
-      a - @aleeycreative account link
- */
-
+/* App Header */
  .app-header {
-   grid-area: h;
    text-align:center;
    padding:2px;
    margin-bottom:30px;
    background:var(--color-4);
-   font-size:1.6em; 
+   font-size:1.3em; 
    font-family:Pattaya;
    color:var(--color-1);
  }
+ .app-header h2 {
+     margin:10px;
+}
  .day-banner {
    padding:15px;
    width:200px;
@@ -91,23 +79,20 @@ body  {
    border:1px solid var(--color-3);
  }
  .welcome-text {
-   grid-area : w;
-   max-width:400px;
+   max-width:500px;
    display:flex;
    justify-content:center;
-   font-size:1.4em;
+   font-size:1.6em;
  }
  
  .table-container {
-   grid-area : t;
    margin:10px auto;
  }
  
  
 table {
     box-sizing : border-box;
-    max-width:00px;
-    font-size:1.4em; 
+    font-size:1.5em; 
     text-align:center;
 
 }
@@ -119,7 +104,7 @@ table {
 }
 tbody tr {
     color:var(--color-4);
-    padding:20px;
+    padding:40px;
 }
 tbody tr.row-compare-country {
     background:var(--color-3);
@@ -146,8 +131,6 @@ tbody tr.compare-row td.lower-recovrd {
     color:red;
 }
 .country-finder-container {
-   grid-area:f;
-   width:200px;
    margin:auto;
    display:flex;
    flex-flow:column wrap;
@@ -174,55 +157,51 @@ tbody tr.compare-row td.lower-recovrd {
 
  
  .cards {
-     grid-area: c;
      display:flex;
      flex-flow:row wrap;
      align-items:center;
+     justify-conten:space-between;
 }
-.cards * {
-    margin:auto;
-    max-width:220px;
-}
+
 .card-item {
     background:var(--color-4);
     color:var(--color-1);
     margin:20px auto;
     display:flex;
+    width:300px;
+    height:250px;
     flex-flow:column wrap;
     justify-content:space-between;
     align-items:center;
 }
+
 .card-item-icon {
-    font-size:32px;
+    font-size:48px;
 }
 .card-item h2 {
-    font-size: 1.5em;
+    font-size: 2.3em;
 }
 .card-item p {
     text-align:center;
+    padding:10px;
 }
 
 .card-hotline {
-    grid-area:l;
+    display:flex;
+    text-align:center;
+    flex-flow:column wrap;
+    justify-content:space-around;
+}
+.card-hotline-title, .reference-container h2 {
     text-align:center;
 }
-.card-hotline-title {
-    padding:5px;
-}
-.card-hotline p {
-    width:100%;
-    display:flex;
-    flex-flow:column wrap;
-    justify-content:center;
-    align-items:center;
-}
+
 .references-container {
-  grid-area:r;
+  display:flex;
+  flex-flow:column wrap;
 }
 @media only screen and (max-width:550px) {
-
 .app-body {
-    display:block;
 }
 
 .app-header {
@@ -230,48 +209,51 @@ tbody tr.compare-row td.lower-recovrd {
     font-size:1.2em;
 }
 
-h2 {
-    font-size:1.5em;
-}
-h3 {
-    font-size:1.3em;
-}
-.day-banner {
-    width:170px;
-    padding:15px;
-}
 
 p {
     padding:10px;
     font-size:.9em;
 }
-p.welcome-text {
+.welcome-text {
   width:50vh;
   margin:auto;
-  font-size:1.2em
+  font-size:1.2em;
 }
 .table-container {
     margin:10px; /* ? */   
 }
-.cards {
-  display:block;
-}
 table {
-    box-sizing : border-box;
-    width:100%; /* ? */
-    font-size:1.1em; /* ? */
-
+    font-size:1.2em;
 }
 
+tbody tr {
+    color:var(--color-4);
+    padding:20px;
+}
 
-h3.news-update {
+.cards {
+  display:flex;
+  flex-flow:column wrap;
+  justify-content: center;
+}
+.card-item {
     width:200px;
-    background:var(--color-4);
-    color:white;
-    margin:auto;
-    text-align:center;
+    height:150px;
+    margin:10px;
+    flex-flow:column;
+    justify-content: center;
 }
-
+.card-item-icon {
+    font-size:32px;
+}
+.card-item h2 {
+    font-size: 1.4em;
+    margin:0px;
+}
+.card-item p {
+    text-align:center;
+    margin:0px;
+}
 .news-item {
     display:flex;
     flex-flow:row nowrap;
@@ -288,3 +270,4 @@ h3.news-update {
 }
 
 }
+

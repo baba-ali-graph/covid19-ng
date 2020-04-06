@@ -88,12 +88,13 @@ a {
  }
  
  .table-container {
-   margin:10px auto;
+   width:70%;
    
  }
  
  
 table {
+    width:100%;
     margin:auto;
     box-sizing : border-box;
     font-size:1.5em; 
@@ -118,7 +119,8 @@ tbody tr td {
   padding:10px;
 }
 tr,td {
-  padding:10px 20px;
+  padding:40px 40px;
+  text-align:center;
 }
 
 tbody tr.compare-row {
@@ -199,15 +201,9 @@ tbody tr.compare-row td.lower-recovrd {
 }
 
 .card-hotline {
-    display:flex;
     text-align:center;
-    flex-flow:column wrap;
-    justify-content:space-around;
 }
-.card-hotline * {
- display: block;
- width:80%;
-}
+
 .card-hotline-title {
     text-align:center;
 }
@@ -223,12 +219,12 @@ tbody tr.compare-row td.lower-recovrd {
 footer {
   background:var(--color-1);
   display:flex;
-  flex-flow:column nowrap;
+  flex-flow:column wrap;
 }
 .top-footer {
   display:flex;
   flex-flow:row nowrap;
-  justify-content:space-between;
+  justify-content:space-around;
   align-items:center;
 }
 .bottom-footer{
@@ -237,7 +233,10 @@ footer {
   justify-content:center;
   align-items:center;
 }
-
+.ht {
+    margin:10px auto;;
+    
+}
 
 /* -------------------- BREAKPOINT : MOBILE DEVICES -------------- */
 @media only screen and (max-width:550px) {
@@ -258,9 +257,13 @@ p {
   margin:auto;
   font-size:1.2em;
 }
-
+.table-container{
+  width:auto;
+}
 table {
     font-size:1.2em;
+    width:8
+    margin:auto;
 }
 
 tbody tr {
@@ -268,6 +271,9 @@ tbody tr {
     padding:20px;
 }
 
+tr,td {
+  padding:10px 20px;
+}
 .cards {
   display:flex;
   flex-flow:column wrap;
@@ -305,6 +311,11 @@ tbody tr {
     max-width:160px;
     color:var(--color-4);
 }
-
+footer {
+    font-size:.8em;
+}
+.ht{
+  margin:20px;
+}
 }
 
